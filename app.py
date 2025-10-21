@@ -15,11 +15,11 @@ PARAMS_NAME = [
 
 
 # Cargar el modelo
-with open("/home/chipa/TP8/rf.pkl", "rb") as f:
+with open("C:/Users/Usuario/Desktop/datos Vivos/TP8/TP8/rf.pkl", "rb") as f:
     model = pickle.load(f)
 
 # Cargar el nombre de las columnas
-COLUMNS_PATH = "/home/chipa/TP8/categories_ohe.pickle"
+COLUMNS_PATH = "C:/Users/Usuario/Desktop/datos Vivos/TP8/TP8/categories_ohe.pickle"
 with open(COLUMNS_PATH, 'rb') as handle:
     ohe_tr = pickle.load(handle)
 
@@ -108,6 +108,14 @@ with gr.Blocks() as demo:
                 outputs=[label], #restultado de la función 
                 api_name="¿Cómo se fue el cliente?"
             )
-    
+            
+            
+            # Imagen
+            image = gr.Image(
+                value="C:/Users/Usuario/Desktop/datos Vivos/TP8/TP8/FOTO.jpg",
+                label="Gracias por tu evaluación ✈️",
+                show_label=True,
+                interactive=False
+            )
 
 demo.launch(share = True)
